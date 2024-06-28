@@ -81,7 +81,7 @@ function funPhrase(str) {
     return `We put the ${newStr} in ${str}.`
 }
 let str = 'Functions rock!';
-console.log(funPhrase(str));
+//console.log(funPhrase(str));
 
 // Test Function
 
@@ -95,3 +95,10 @@ console.log(funPhrase(str));
 // 3. Call your area function by passing in two arguments - the length and width.
 // 4. If only one argument is passed to the function, then the shape is a square. Modify your code to deal with this case.
 // 5. Use a template literal to print, “The area is ____ cm^2.”
+
+function rectangleArea(length, width){
+    return length * width;
+}
+
+console.log(`The area is ${rectangleArea(3, 5)}cm^2.`);
+
