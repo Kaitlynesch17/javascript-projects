@@ -9,6 +9,26 @@
 // 5. Use console.log(reverseCharacters(myVariableName)); to call the function and verify that it correctly reverses the characters in the string.
 // 6. Optional: Use method chaining to reduce the lines of code within the function.
 
+function reverseCharacters(variable){
+
+    if (typeof variable === 'string'){
+    
+        return variable.split('').reverse().join('');
+    
+    } else if (typeof variable === 'number') {
+       
+        let variableReversed = String(variable).split('').reverse().join('');
+      
+        return Number(variableReversed);
+    
+    }
+
+}
+
+let string = 'Launch Code';
+
+//console.log(reverseCharacters(string));
+
 // Part Two: Reverse Digits
 
 // 1. Add an if statement to reverseCharacters to check the typeof the parameter.
@@ -30,12 +50,38 @@ let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
 
+
+
+function completeReversal(arr){
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++){
+        newArr[i] = reverseCharacters(arr[i]);
+    }
+
+    return newArr.reverse();
+}
+
+//console.log(completeReversal(arrayTest3));
+
 // Bonus Missions
 
 // 1. Have a clear, descriptive name like funPhrase.
 // 2. Retrieve only the last character from strings with lengths of 3 or less.
 // 3. Retrieve only the first 3 characters from strings with lengths larger than 3.
 // 4. Use a template literal to return the phrase We put the '___' in '___'. Fill the first blank with the modified string, and fill the second blank with the original string.
+
+function funPhrase(str) {
+    if (str.length <= 3 ){
+       let newStr =  str.slice(str.length-1);
+    } else if (str.length > 3) {
+         newStr = str.slice(0, 3);
+    }
+
+
+    return `We put the ${newStr} in ${str}.`
+}
+let str = 'Functions rock!';
+console.log(funPhrase(str));
 
 // Test Function
 
