@@ -64,41 +64,31 @@ function completeReversal(arr){
 //console.log(completeReversal(arrayTest3));
 
 // Bonus Missions
-
 // 1. Have a clear, descriptive name like funPhrase.
 // 2. Retrieve only the last character from strings with lengths of 3 or less.
 // 3. Retrieve only the first 3 characters from strings with lengths larger than 3.
 // 4. Use a template literal to return the phrase We put the '___' in '___'. Fill the first blank with the modified string, and fill the second blank with the original string.
-
-function funPhrase(str) {
-    if (str.length <= 3 ){
-       let newStr =  str.slice(str.length-1);
-    } else if (str.length > 3) {
-         newStr = str.slice(0, 3);
-    }
-
-
-    return `We put the ${newStr} in ${str}.`
-}
-let str = 'Functions rock!';
-//console.log(funPhrase(str));
-
 // Test Function
-
 // 1. Outside of the function, define the variable str and initialize it with a string (e.g. 'Functions rock!').
 // 2. Call your function and print the returned phrase.
-
+function funPhrase(str){
+    if (str.length <= 3){
+        return str.slice(str.length-1);
+    }else{
+        return str.slice(0,3);
+    }
+}
+let str = 'Try';
+console.log(`We put the ${funPhrase(str)} in ${str}.`);
 // Area of rectangle equal to length x width
-
 // 1. Define a function with the required parameters to calculate the area of a rectangle.
 // 2. The function should return the area, NOT print it.
 // 3. Call your area function by passing in two arguments - the length and width.
 // 4. If only one argument is passed to the function, then the shape is a square. Modify your code to deal with this case.
 // 5. Use a template literal to print, “The area is ____ cm^2.”
-
-function rectangleArea(length, width){
+function areaOfRectangle(length,width = length){
     return length * width;
 }
-
-console.log(`The area is ${rectangleArea(3, 5)}cm^2.`);
-
+let lengthOfRect = 20;
+let widthOfRect = 7;
+//console.log(`The area is ${areaOfRectangle(lengthOfRect,widthOfRect)} cm^2.`)
