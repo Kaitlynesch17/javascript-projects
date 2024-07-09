@@ -1,37 +1,37 @@
 // Code your orbitCircumference function here:
+function orbitCircumference(rad){
+let circumference = 2 * Math.PI * rad;
 
-function orbitCircumference(radius){
-let circumference = Math.round(2 * Math.PI * radius);
-  return circumference;
+return Math.round(circumference);
 };
+
 
 // Code your missionDuration function here:
-function missionDuration(numberOfOrbits, orbitalSpeed, orbitRadius){
-let distance = numberOfOrbits * orbitCircumference(orbitRadius);
-let time = Math.round(distance / orbitalSpeed*1000) / 100;
+function missionDuration(numOrbits, orbitRadius = 2000, orbitalSpeed = 28000) {
+   let distance = numOrbits * orbitCircumference(orbitRadius);
+   let time = Math.round(distance / orbitalSpeed * 100) / 100;
 
-console.log(`The mission will travel ${distance} km around the planet, and it will take ${time} hours to complete.`)
-
-  return time;
+   console.log(`The mission will travel ${distance} km around the planet, and it will take ${time} hours to complete.`);
+    
+   return time;
 };
-
 
 
 // Copy/paste your selectRandomEntry function here:
-function selectRandomEntry(arr){
+function randomSelection(arr){
   let index = Math.floor(Math.random()*arr.length);
   return arr[index];
-};
+}
 
 // Code your oxygenExpended function here:
+function oxygenExpended(object) {
+  let time = missionDuration(3);
+  let oxygen = Math.round(object.o2Used(time) * 1000) / 1000;
 
-function oxygenExpended(object){
-let duration = missionDuration(3, 28000, 2000);
 
-let oxygenUsed = Math.round(object.o2Used(duration)*1000)/100;
+    return `${object.name} will perform the spacewalk, which will last ${time} hours and require ${oxygen} kg of oxygen.`;
+}
 
-return `${object.name} will perform the spacewalk, which will last ${duration} hours and require ${oxygenUsed} kg of oxygen.`;
-};
 
 // Candidate data & crew array.
 let candidateA = {
@@ -78,5 +78,7 @@ let candidateA = {
  };
  
  let crew = [candidateA,candidateC,candidateE];
- 
- console.log(oxygenExpended(selectRandomEntry(crew)));
+ let oxygenUsed = oxygenExpended(randomSelection(crew));
+
+
+ console.log(oxygenUsed);
