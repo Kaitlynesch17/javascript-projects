@@ -8,10 +8,10 @@ let crewMassKg = astronautCount * averageAstronautMassKg;
 let fuelMassKg = 760000;
 let shuttleMassKg = 74842.31;
 let totalMassKg = crewMassKg + fuelMassKg + shuttleMassKg;
-let maximumMassLimit = 850000;
+const maximumMassLimit = 850000;
 let fuelTempCelsius = -225;
-let minimumFuelTemp = -300;
-let maximumFuelTemp = -150;
+const minimumFuelTemp = -300;
+const maximumFuelTemp = -150;
 let fuelLevel = "100%";
 let weatherStatus = "clear";
 let preparedForLiftOff = true;
@@ -55,13 +55,13 @@ if (weatherStatus === "clear"){
 // Verify shuttle launch can proceed based on above conditions
 
 if (preparedForLiftOff === true){
-    console.log("\n Date: ", date,  "\n Time: ", time, 
-        "\n Astronaut Count: ", astronautCount, 
-        "\n Crew Mass: ",crewMassKg,"kg", "\n Fuel Mass: ",fuelMassKg,"kg", 
-        "\n Shuttle Mass: ", shuttleMassKg,"kg", "\n Total Mass: ",totalMassKg,"kg",
-        "\n Fuel Temperature: ", fuelTempCelsius,"C", "\n Weather Status: ", weatherStatus
+    console.log("Date:", date,  "\n Time:", time, 
+        "\n Astronaut Count:", astronautCount, 
+        "\n Crew Mass:",crewMassKg,"kg", "\n Fuel Mass:",fuelMassKg,"kg", 
+        "\n Shuttle Mass:", shuttleMassKg,"kg", "\n Total Mass:",totalMassKg,"kg",
+        "\n Fuel Temperature:", fuelTempCelsius,"°C", "\n Weather Status:", weatherStatus
          );
-         console.log("Have a safe trip astronauts!");
+         console.log("Have a safe trip astronauts! ☺ ☻");
 } else {
     console.log("Not prepared for liftoff!");
 }
